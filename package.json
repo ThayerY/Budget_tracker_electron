@@ -10,9 +10,11 @@
     "start-frontend": "npx live-server frontend",
     "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "start-electron": "electron ./electron-main.js",
-    "build": "electron-builder"
+    "build": "electron-builder",
+    "electron:dev": "electron ."
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -20,21 +22,47 @@
     "mongoose": "^7.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
     "concurrently": "^8.2.2",
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8"
   },
   "build": {
     "productName": "Budget Tracker",
-    "appId": "com.thaair.budgettracker",
+    "appId": "com.yourcompany.budgettracker",
     "directories": {
       "output": "dist"
     },
     "files": [
+      "dist/**/*",
+      "node_modules/**/*",
       "backend/**/*",
       "frontend/**/*",
       "electron-main.js",
-      "package.json"
+      "package.json",
+      "!.env"
+    ],
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "frontend",
+        "to": "frontend",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": ".env",
+        "to": ".env"
+      }
     ],
     "win": {
       "target": "nsis"

@@ -1,8 +1,8 @@
-// modules/fetchItems.js
-// -----------------------------------------------------------------------------
-// This file handles fetching existing items from the backend and storing them
-// in our local state, then calls updateDisplay.
-// -----------------------------------------------------------------------------
+// // modules/fetchItems.js
+// // -----------------------------------------------------------------------------
+// // This file handles fetching existing items from the backend and storing them
+// // in our local state, then calls updateDisplay.
+// // -----------------------------------------------------------------------------
 
 import { shoppingHistory } from './state.js';
 import { updateDisplay } from './display.js';
@@ -22,3 +22,4 @@ export async function fetchItems() {
     console.error("Could not fetch items:", error);
   }
 }
+
