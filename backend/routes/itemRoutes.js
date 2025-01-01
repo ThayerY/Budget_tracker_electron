@@ -71,3 +71,112 @@ itemRouter.delete('/:id', async (req, res) => {
     res.status(500).json({ error: 'Server error deleting item' });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+// ********************************************************************************
+// ********************************************************************************
+
+
+
+
+
+// // backend/routes/itemRoutes.js
+// // -----------------------------------------------------------------------------
+// // Routes for creating, fetching, updating, and deleting "items".
+// // -----------------------------------------------------------------------------
+// // We assume user must be logged in (session) to do item operations, so we use
+// // requireAuth. If not logged in, returns 401.
+// // -----------------------------------------------------------------------------
+
+// import express from 'express';
+// import Item from '../models/Item.js';
+
+// const router = express.Router();
+
+// /** Simple middleware to check session user */
+// function requireAuth(req, res, next) {
+//   if (!req.session.user) {
+//     return res.status(401).json({ error: 'Not logged in' });
+//   }
+//   next();
+// }
+
+// /**
+//  * GET /api/items - fetch all items
+//  */
+// router.get('/items', requireAuth, async (req, res) => {
+//   try {
+//     const items = await Item.find({});
+//     res.json(items);
+//   } catch (err) {
+//     console.error('Error fetching items:', err);
+//     res.status(500).json({ error: 'Internal server error.' });
+//   }
+// });
+
+// /**
+//  * POST /api/items - create a new item
+//  * Expects { name, price, date, time, day }
+//  */
+// router.post('/items', requireAuth, async (req, res) => {
+//   try {
+//     const { name, price, date, time, day } = req.body;
+//     const newItem = new Item({ name, price, date, time, day });
+//     await newItem.save();
+//     res.status(201).json(newItem);
+//   } catch (err) {
+//     console.error('Error creating item:', err);
+//     res.status(500).json({ error: 'Internal server error.' });
+//   }
+// });
+
+// /**
+//  * PUT /api/items/:id - update existing item
+//  * Expects e.g. { name, price, date, time, day } in body
+//  */
+// router.put('/items/:id', requireAuth, async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     // Merge the fields from req.body
+//     const updatedData = { ...req.body };
+//     // If you need to do time conversion or other logic, do it here
+//     // e.g. updatedData.time = convertTo12HourFormat(req.body.time);
+
+//     const updatedItem = await Item.findByIdAndUpdate(id, updatedData, { new: true });
+//     if (!updatedItem) {
+//       return res.status(404).json({ error: 'Item not found' });
+//     }
+//     res.json(updatedItem);
+//   } catch (err) {
+//     console.error('Error updating item:', err);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// /**
+//  * DELETE /api/items/:id - delete item
+//  */
+// router.delete('/items/:id', requireAuth, async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const deletedItem = await Item.findByIdAndDelete(id);
+//     if (!deletedItem) {
+//       return res.status(404).json({ error: 'Item not found' });
+//     }
+//     res.status(200).json({ message: 'Item deleted successfully' });
+//   } catch (err) {
+//     console.error('Delete item error:', err);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+// export { router as itemRouter };

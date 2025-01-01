@@ -71,3 +71,58 @@ export async function handleAddItem(e) {
     alert("Failed to add item. Check console for details.");
   }
 }
+
+
+
+
+
+// *********************************************************************************
+// ********************************************************************************
+
+
+
+
+
+
+// // modules/deleteHandler.js
+// // ----------------------------------------------------------------------------
+// // Called when user clicks "Delete". We get item._id from data-id, call
+// // DELETE /api/items/:id, then remove from local array.
+// // ----------------------------------------------------------------------------
+
+// import { shoppingHistory } from './state.js';
+// import { updateDisplay } from './display.js';
+
+// export async function handleDeleteItem(e) {
+//   const itemId = e.target.dataset.id;
+//   if (!itemId) return;
+
+//   if (!confirm('Are you sure you want to delete this item?')) return;
+
+//   try {
+//     const res = await fetch(`http://localhost:3000/api/items/${itemId}`, {
+//       method: 'DELETE',
+//       credentials: 'include',
+//     });
+//     if (!res.ok) {
+//       throw new Error(`HTTP error! status: ${res.status}`);
+//     }
+//     // Remove from local array
+//     const index = shoppingHistory.findIndex(it => it._id === itemId);
+//     if (index !== -1) {
+//       shoppingHistory.splice(index, 1);
+//     }
+//     updateDisplay();
+//   } catch (err) {
+//     console.error('Error deleting item:', err);
+//     alert('Failed to delete item.');
+//   }
+// }
+
+
+
+
+
+
+
+

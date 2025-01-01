@@ -18,3 +18,29 @@ export let currentDate = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD"
 export function setCurrentDate(newDate) {
   currentDate = newDate;
 }
+
+
+
+
+
+
+
+// ********************************************************************************
+// ********************************************************************************
+
+
+
+// // modules/state.js
+// // ----------------------------------------------------------------------------
+// // Holds global app state, like the array of items (shoppingHistory), current date,
+// // daily limit, etc.
+// // ----------------------------------------------------------------------------
+
+// export const shoppingHistory = []; // We'll store the fetched items here
+// export let currentDate = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
+// export const dailyLimit = 25000; // or any other limit
+// export const monthlyBudget = 150000; // The monthly budget
+
+// export function setCurrentDate(newDate) {
+//   currentDate = newDate;
+// }

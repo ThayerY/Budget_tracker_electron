@@ -23,3 +23,47 @@ export async function fetchItems() {
   }
 }
 
+
+
+
+
+
+
+// ********************************************************************************
+// ********************************************************************************
+
+
+
+
+
+
+
+
+
+// // modules/fetchItems.js
+// // ----------------------------------------------------------------------------
+// // Fetch the items from backend (GET /api/items with credentials) and store them
+// // in shoppingHistory, then call updateDisplay()
+// // ----------------------------------------------------------------------------
+
+// import { shoppingHistory } from './state.js';
+// import { updateDisplay } from './display.js';
+
+// export async function fetchItems() {
+//   try {
+//     const response = await fetch('http://localhost:3000/api/items', {
+//       credentials: 'include', // session-based
+//     });
+//     if (!response.ok) {
+//       throw new Error(`Failed to fetch items: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     // Clear and push new
+//     shoppingHistory.length = 0;
+//     shoppingHistory.push(...data);
+//     console.log('Fetched items:', data);
+//     updateDisplay();
+//   } catch (err) {
+//     console.error('Could not fetch items:', err);
+//   }
+// }

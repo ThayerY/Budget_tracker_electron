@@ -16,10 +16,7 @@ export async function connectDB() {
     }
 
     // Connect to MongoDB
-    await mongoose.connect(MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
+    await mongoose.connect(MONGODB_URI);
     console.log('Connected to MongoDB Atlas');
   } catch (err) {
     console.error('Failed to connect to MongoDB Atlas:', err);
@@ -28,4 +25,36 @@ export async function connectDB() {
 }
 
 
+
+
+
+
+// ********************************************************************************
+// ********************************************************************************
+
+
+
+// // backend/config/db.js
+// // -----------------------------------------------------------------------------
+// // Connect to MongoDB using Mongoose, reading the connection string from .env
+// // -----------------------------------------------------------------------------
+
+// import mongoose from 'mongoose';
+
+// export async function connectDB() {
+//   try {
+//     const { MONGODB_URI } = process.env;
+//     if (!MONGODB_URI) {
+//       throw new Error('MONGODB_URI is not defined in .env');
+//     }
+//     await mongoose.connect(MONGODB_URI, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     });
+//     console.log('Connected to MongoDB');
+//   } catch (err) {
+//     console.error('Failed to connect to MongoDB:', err);
+//     process.exit(1);
+//   }
+// }
 

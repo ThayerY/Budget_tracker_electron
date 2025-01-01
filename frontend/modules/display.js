@@ -48,3 +48,75 @@ export function updateDisplay() {
   renderHistory();
 }
 
+
+
+
+
+
+// ********************************************************************************
+// ********************************************************************************
+
+
+
+
+
+
+
+// // modules/display.js
+// // ----------------------------------------------------------------------------
+// // Renders the items (shoppingHistory) into the history-table
+// // Also updates any daily totals, etc.
+// // ----------------------------------------------------------------------------
+
+// import { shoppingHistory } from './state.js';
+// import { renderHistory } from './renderHistory.js'; // optional if you separate logic
+
+// export function updateDisplay() {
+//   // For brevity, let's do a simple re-render
+//   const tableBody = document.querySelector('#history-table tbody');
+//   tableBody.innerHTML = '';
+
+//   for (const item of shoppingHistory) {
+//     const row = document.createElement('tr');
+
+//     const nameTd = document.createElement('td');
+//     nameTd.textContent = item.name;
+//     row.appendChild(nameTd);
+
+//     const priceTd = document.createElement('td');
+//     priceTd.textContent = `$${item.price.toLocaleString()}`;
+//     row.appendChild(priceTd);
+
+//     const dateTd = document.createElement('td');
+//     dateTd.textContent = item.date || '';
+//     row.appendChild(dateTd);
+
+//     const timeTd = document.createElement('td');
+//     timeTd.textContent = item.time || '';
+//     row.appendChild(timeTd);
+
+//     const dayTd = document.createElement('td');
+//     dayTd.textContent = item.day || '';
+//     row.appendChild(dayTd);
+
+//     // Actions cell
+//     const actionsTd = document.createElement('td');
+
+//     // Edit button
+//     const editBtn = document.createElement('button');
+//     editBtn.textContent = 'Edit';
+//     editBtn.dataset.id = item._id; // store the real DB _id
+//     editBtn.classList.add('edit-btn');
+//     actionsTd.appendChild(editBtn);
+
+//     // Delete button
+//     const deleteBtn = document.createElement('button');
+//     deleteBtn.textContent = 'Delete';
+//     deleteBtn.dataset.id = item._id;
+//     deleteBtn.classList.add('delete-btn');
+//     actionsTd.appendChild(deleteBtn);
+
+//     row.appendChild(actionsTd);
+//     tableBody.appendChild(row);
+//   }
+// }
